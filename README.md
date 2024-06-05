@@ -1,10 +1,10 @@
 # HW-Ansible-GJK
 
 This is my homework for my linux class.
-The assignment was to creat ansible yaml file with task to:
-1) create new user
-2) add public ssh key to the user
-3) install few useful packages (Yes, sl package is fundamental)
+The assignment was to create Ansible yaml file with tasks to:
+1) create a new user
+2) add a public ssh key to the user
+3) install a few useful packages (Yes, sl package is fundamental)
 
 I could have used my Rasp. Pi for the project, but I decided to do it locally
 (because sincerely I was to lazy to try to find it :/ ).
