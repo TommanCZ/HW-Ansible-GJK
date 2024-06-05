@@ -8,7 +8,7 @@
   vars:
     new_users_name: "guest"
     new_users_passwd: "plaintextisthebest"
-    ssh_key: "AAAAC3NzaC1lZDI1NTE5AAAAINr4C/wwnqecL8y/F+stmz9CGvJtSG6qRc/yMvHjlXwc"
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINr4C/wwnqecL8y/F+stmz9CGvJtSG6qRc/yMvHjlXwc"
     packages:
       - htop
       - vscode
