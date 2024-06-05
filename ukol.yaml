@@ -1,0 +1,50 @@
+---
+
+- name: Ukol
+  hosts: localhost
+  become: yes
+  connection: local
+
+  vars:
+    new_users_name: "guest"
+    new_users_passwd: "plaintextisthebest"
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINr4C/wwnqecL8y/F+stmz9CGvJtSG6qRc/yMvHjlXwc"
+    packages:
+      - htop
+      - vscode
+      - sl
+
+  tasks:
+    - name: Create User
+      become: yes
+      user:
+        name: "{{ new_users_name }}"
+        password: "{{ new_users_passwd }}"
+        shell: /bin/bash
+        create_home: yes
+        state: present
+
+    - name: Create .ssh dir
+      become: yes
+      file:
+        path: "/home/{{ new_users_name }}/.ssh"
+        state: directory
+        owner: "{{ new_users_name }}"
+        mode: "0700"
+
+    - name: Add ssh pub key
+      become: yes
+      authorized_key:
+        user: "{{ new_users_name }}"
+        state: present
+        key: "{{ ssh_key }}"
+
+    - name: Install packages
+      become: yes
+      pacman: # As I am using Manjaro on my computer
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      
+
+
