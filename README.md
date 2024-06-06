@@ -9,7 +9,7 @@ The assignment was to create an Ansible yaml file with tasks to:
 I could have used my Rasp. Pi for the project, but I decided to do it locally
 (because sincerely I was to lazy to try to find it :/ ).
 
-The cript uses pacman module (because I use Manjaro) so it will not work on any
+The script uses pacman module (because I use Manjaro) so it will not work on any
 other system that has a different package manager (basically any other system
 that is not arch or arch-based)
 
